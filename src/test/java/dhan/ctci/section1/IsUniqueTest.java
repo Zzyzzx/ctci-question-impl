@@ -41,12 +41,11 @@ public class IsUniqueTest {
   }
 
   public boolean hasAllUniqueSorting(String s) {
-    List<Character> list = toList(s);
+    char[] charArray = s.toCharArray();
+    Arrays.sort(charArray);
 
-    Collections.sort(list);
-
-    for (int i = 1; i < list.size(); i++) {
-      if (list.get(i - 1) == list.get(i)) {
+    for (int i = 1; i < charArray.length; i++) {
+      if (charArray[i - 1] == charArray[i]) {
         return false;
       }
     }
